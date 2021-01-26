@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
-import { GameRecord } from '../model/GameRecord';
+
 
 @Component({
   selector: 'app-colorgame',
@@ -10,7 +10,7 @@ import { GameRecord } from '../model/GameRecord';
 })
 export class ColorgameComponent implements OnInit {
 
-  colourGame: GameRecord[];
+  colourGame: any;
   constructor(private dataService: DataService) { }
 
   ngOnInit(){

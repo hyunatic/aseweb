@@ -1,4 +1,4 @@
-export interface GameRecord{
+export interface GameRecord {
     id?: string;
     age?: string;
     time?:string;
