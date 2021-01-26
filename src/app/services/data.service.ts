@@ -11,4 +11,10 @@ export class DataService {
     getColourGame(){
         return this.http.get("http://localhost/aseapi/public/index.php/api/colorgame");
     }
+    getSimonSays(){
+        return this.http.get("http://localhost/aseapi/public/index.php/api/simonsays");
+    }
+    getNumberGame(){
+        return this.http.get("http://localhost/aseapi/public/index.php/api/numbergame");
+    }
 }
