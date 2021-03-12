@@ -1,3 +1,180 @@
 <div class="main-content">
-    Helllo world
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="fa fa-list"></i>
+                        </div>
+                        <p class="card-category">Total Records</p>
+                        <h3 class="card-title">{{recordcount}}
+                        </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="fa fa-clock-o"></i> Last Updated on: {{time}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-success card-header-icon">
+                        <div class="card-icon">
+                            <i class="fa fa-calculator"></i>
+                        </div>
+                        <p class="card-category">Average Age</p>
+                        <h3 class="card-title">{{ageavg}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="fa fa-clock-o"></i> Last Updated on: {{time}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-danger card-header-icon">
+                        <div class="card-icon">
+                            <i class="fa fa-clock-o"></i>
+                        </div>
+                        <p class="card-category">Average Time</p>
+                        <h3 class="card-title">{{timeavg}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="fa fa-clock-o"></i> Last Updated on: {{time}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-info card-header-icon">
+                        <div class="card-icon">
+                            <i class="fa fa-pie-chart"></i>
+                        </div>
+                        <p class="card-category">Average Score</p>
+                        <h3 class="card-title">{{scoreavg}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="fa fa-clock-o"></i> Last Updated on: {{time}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div class="card">
+                <div class="card-header card-header-warning">
+                    <h4 class="card-title">Leaderboard</h4>
+                    <p class="card-category">Last Updated on: {{time}}</p>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <thead class="text-warning">
+                            <th>Age</th>
+                            <th>Score</th>
+                            <th>Time</th>
+                            <th>Picture</th>
+                            <th>Mode</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of numberGame">
+                                <td>{{i.age}}</td>
+                                <td>{{i.score}}</td>
+                                <td>{{i.time}}</td>
+                                <td><img src="{{i.picture}}" width="100" height="100" alt=""></td>
+                                <td>{{i.mode}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <div class="card">
+                <div class="card-header card-header-warning">
+                    <h4 class="card-title">Statistical Analysis</h4>
+                    <p class="card-category">Last Updated on: {{time}}</p>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <thead class="text-warning">
+                            <th>Age</th>
+                            <th>Score</th>
+                            <th>Time</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Count: {{recordcount}}</td>
+                                <td>Count: {{recordcount}}</td>
+                                <td>Count: {{recordcount}}</td>
+                            </tr>
+                            <tr>
+                                <td>Average: {{ageavg}}</td>
+                                <td>Average: {{scoreavg}}</td>
+                                <td>Average: {{timeavg}}</td>
+                            </tr>
+                            <tr>
+                                <td>Standard Deviation: {{agestd}}</td>
+                                <td>Standard Deviation: {{scorestd}}</td>
+                                <td>Standard Deviation: {{timestd}}</td>
+                            </tr>
+                            <tr>
+                                <td>Minimum: {{agemin}}</td>
+                                <td>Minimum: {{scoremin}}</td>
+                                <td>Minimum: {{mintime}}</td>
+                            </tr>
+                            <tr>
+                                <td>Maximum: {{agmax}}</td>
+                                <td>Maximum: {{scoremax}}</td>
+                                <td>Maximum: {{maxtimer}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-header card-header-success">
+                    <h4 class="card-title">Player Performance over time</h4>
+                    <p class="card-category">Last Updated on: {{time}}</p>
+                </div>
+                <div class="card-body">
+                    <div style="display: block;">
+                        <canvas baseChart width="400" height="400" [datasets]="lineChartData" [labels]="lineChartLabels"
+                            [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                            [chartType]="lineChartType" [plugins]="lineChartPlugins">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-header card-header-success">
+                    <h4 class="card-title">Player Performance over time</h4>
+                    <p class="card-category">Last Updated on: {{time}}</p>
+                </div>
+                <div class="card-body">
+                    <div style="display: block">
+                        <canvas baseChart [datasets]="scatterChartData" [options]="scatterChartOptions"
+                            [colors]="scatterPlottColors" [labels]="scatterChartLabels" [chartType]="scatterChartType">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
