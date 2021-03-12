@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./numbergame.component.css']
 })
 export class NumbergameComponent implements OnInit {
+    //Avg Score for age group (Scatter Plot)
+    //Player Improvement Graph (Line Graph) X-axis = time, Y-axis = score 
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  
 }

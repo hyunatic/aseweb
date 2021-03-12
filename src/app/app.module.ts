@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
-
+import { ChartsModule } from 'ng2-charts';
 import { AppComponent } from './app.component';
 
 import {
@@ -27,6 +27,7 @@ import { NumbergameComponent } from './numbergame/numbergame.component';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    ChartsModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })

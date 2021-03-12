@@ -6,7 +6,6 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 
 
 export const AdminLayoutRoutes: Routes = [
-    { path: 'dashboard', component: DashboardComponent },
     { path: 'colorgame', component: ColorgameComponent },
     { path: 'simonsays', component: SimonsaysComponent },
     { path: 'numbergame', component: NumbergameComponent },
