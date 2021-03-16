@@ -17,6 +17,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { ColorgameComponent } from './colorgame/colorgame.component';
 import { SimonsaysComponent } from './simonsays/simonsays.component';
 import { NumbergameComponent } from './numbergame/numbergame.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import { NumbergameComponent } from './numbergame/numbergame.component';
     ColorgameComponent,
     SimonsaysComponent,
     NumbergameComponent,
+    LoginComponent,
 
   ],
   providers: [],

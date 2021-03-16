@@ -19,4 +19,7 @@ export class DataService {
     getNumberGame(){
         return this.http.get<GameRecord>("https://aseapi.hyunatic.com/public/index.php/api/numbergame");
     }
+    loginAuthentication(formData){
+        return this.http.post("https://aseapi.hyunatic.com/public/index.php/api/login",formData);
+    }
 }

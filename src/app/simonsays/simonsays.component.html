@@ -25,7 +25,7 @@
                             <i class="fa fa-calculator"></i>
                         </div>
                         <p class="card-category">Average Age</p>
-                        <h3 class="card-title">{{ageavg}}</h3>
+                        <h3 class="card-title">{{ageavg | number: '1.2'}}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -41,7 +41,7 @@
                             <i class="fa fa-clock-o"></i>
                         </div>
                         <p class="card-category">Average Time</p>
-                        <h3 class="card-title">{{timeavg}}</h3>
+                        <h3 class="card-title">{{timeavg | number: '1.2'}}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -57,7 +57,7 @@
                             <i class="fa fa-pie-chart"></i>
                         </div>
                         <p class="card-category">Average Score</p>
-                        <h3 class="card-title">{{scoreavg}}</h3>
+                        <h3 class="card-title">{{scoreavg | number: '1.2'}}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -117,24 +117,24 @@
                                 <td>Count: {{recordcount}}</td>
                             </tr>
                             <tr>
-                                <td>Average: {{ageavg}}</td>
-                                <td>Average: {{scoreavg}}</td>
-                                <td>Average: {{timeavg}}</td>
+                                <td>Average: {{ageavg | number: '1.2'}}</td>
+                                <td>Average: {{scoreavg | number: '1.2'}}</td>
+                                <td>Average: {{timeavg | number: '1.2'}}</td>
                             </tr>
                             <tr>
-                                <td>Standard Deviation: {{agestd}}</td>
-                                <td>Standard Deviation: {{scorestd}}</td>
-                                <td>Standard Deviation: {{timestd}}</td>
+                                <td>Standard Deviation: {{agestd | number: '1.2'}}</td>
+                                <td>Standard Deviation: {{scorestd | number: '1.2'}}</td>
+                                <td>Standard Deviation: {{timestd | number: '1.2'}}</td>
                             </tr>
                             <tr>
-                                <td>Minimum: {{agemin}}</td>
-                                <td>Minimum: {{scoremin}}</td>
-                                <td>Minimum: {{mintime}}</td>
+                                <td>Minimum: {{agemin | number: '1.2'}}</td>
+                                <td>Minimum: {{scoremin | number: '1.2'}}</td>
+                                <td>Minimum: {{mintime | number: '1.2'}}</td>
                             </tr>
                             <tr>
-                                <td>Maximum: {{agmax}}</td>
-                                <td>Maximum: {{scoremax}}</td>
-                                <td>Maximum: {{maxtimer}}</td>
+                                <td>Maximum: {{agmax | number: '1.2'}}</td>
+                                <td>Maximum: {{scoremax | number: '1.2'}}</td>
+                                <td>Maximum: {{maxtimer | number: '1.2'}}</td>
                             </tr>
                         </tbody>
                     </table>

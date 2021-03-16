@@ -1,0 +1,38 @@
+<div class="main-content">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title">Login</h4>
+                    <p class="card-category">Enter Credentials</p>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-6">
+                            <img class="center" src="https://www.starlighttv.net/images/login1.png" alt="">
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="username" placeholder="Username" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <input type="password" [(ngModel)]="password" placeholder="Password" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <button (click)="Login()" mat-raised-button class="btn btn-success">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

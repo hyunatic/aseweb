@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'app/services/data.service';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
@@ -32,7 +33,15 @@ export class ColorgameComponent implements OnInit {
   timeavg: number;
   timestd: number;
 
-  constructor(private dataService: DataService) { }
+  username: string = localStorage.getItem("username");
+
+  constructor(private dataService: DataService, private router: Router) { }
+
+  VerifyLogin(){
+    if(this.username == null){
+      this.router.navigateByUrl('/login')
+    }
+  }
 
   //Player Improvement Graph (Line Graph) X-axis = time, Y-axis = score 
   public lineChartData: ChartDataSets[] = [
@@ -91,6 +100,7 @@ export class ColorgameComponent implements OnInit {
   public lineChartPlugins = [];
 
   ngOnInit() {
+    this.VerifyLogin();
     this.DisplayData();
     this.TimeDisplay();
   }
