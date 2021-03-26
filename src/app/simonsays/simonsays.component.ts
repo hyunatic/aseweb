@@ -35,8 +35,8 @@ export class SimonsaysComponent implements OnInit {
 
   constructor(private dataService: DataService, private router: Router) { }
 
-  VerifyLogin(){
-    if(this.username == null){
+  VerifyLogin() {
+    if (this.username == null) {
       this.router.navigateByUrl('/login')
     }
   }
@@ -104,12 +104,12 @@ export class SimonsaysComponent implements OnInit {
   }
   DisplayData() {
     this.dataService.getSimonSays().subscribe(data => {
-        this.simonSays
-          = data;
-        this.populateLineGraph();
-        this.populateScatterPlot();
-        this.CalculateStatistic();
-      });
+      this.simonSays
+        = data;
+      this.populateLineGraph();
+      this.populateScatterPlot();
+      this.CalculateStatistic();
+    });
   }
   CalculateStatistic() {
     var age = this.simonSays.map(x => parseInt(x.age))
@@ -153,6 +153,26 @@ export class SimonsaysComponent implements OnInit {
   //Avg Score for age group (Scatter Plot)
   public scatterChartOptions: ChartOptions = {
     responsive: true,
+    scales: {
+      xAxes: [{
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: 'Age'
+        },
+      }],
+      yAxes: [
+        {
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Score'
+          },
+          id: 'y-axis-0',
+          position: 'left',
+        }
+      ]
+    }
   };
   public scatterChartLabels: Label[] = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
 

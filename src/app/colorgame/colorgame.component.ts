@@ -56,7 +56,7 @@ export class ColorgameComponent implements OnInit {
         display: true,
         scaleLabel: {
           display: true,
-          labelString: 'Timer'
+          labelString: 'Number of tries'
         },
       }],
       yAxes: [
@@ -144,12 +144,32 @@ export class ColorgameComponent implements OnInit {
       var score = this.colourGame.map(x => parseInt(x.score))
       score.forEach(x => data.push(x));
     });
-    this.colourGame.forEach(x => this.lineChartLabels.push(x.time))
+    this.colourGame.forEach((x,index) => this.lineChartLabels.push(index+1))
   }
 
   //Avg Score for age group (Scatter Plot)
   public scatterChartOptions: ChartOptions = {
     responsive: true,
+    scales: {
+      xAxes: [{
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: 'Age'
+        },
+      }],
+      yAxes: [
+        {
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Score'
+          },
+          id: 'y-axis-0',
+          position: 'left',
+        }
+      ]
+    }
   };
   public scatterChartLabels: Label[] = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
 
