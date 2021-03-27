@@ -127,10 +127,10 @@ export class ColorgameComponent implements OnInit {
     this.scorestd = Math.sqrt(score.map(x => Math.pow(x - this.scoreavg, 2)).reduce((a, b) => a + b) / this.recordcount)
 
 
-    var time = this.colourGame.map(x => parseInt(x.time))
+    var time = this.colourGame.map(x => parseFloat(x.time))
     this.mintime = Math.min(...time)
     this.maxtimer = Math.max(...time)
-    this.timeavg = time.reduce((total, current) => total += current) / this.recordcount
+    this.timeavg = time.reduce((total, current) => total + current) / this.recordcount
     this.timestd = Math.sqrt(time.map(x => Math.pow(x - this.timeavg, 2)).reduce((a, b) => a + b) / this.recordcount)
   }
 

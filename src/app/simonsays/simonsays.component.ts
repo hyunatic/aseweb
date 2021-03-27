@@ -128,7 +128,7 @@ export class SimonsaysComponent implements OnInit {
 
 
     var time = this.simonSays
-      .map(x => parseInt(x.time))
+      .map(x => parseFloat(x.time))
     this.mintime = Math.min(...time)
     this.maxtimer = Math.max(...time)
     this.timeavg = time.reduce((total, current) => total += current) / this.recordcount

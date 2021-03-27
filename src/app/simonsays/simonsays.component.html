@@ -87,7 +87,7 @@
                             <tr *ngFor="let i of simonSays">
                                 <td>{{i.age}}</td>
                                 <td>{{i.score}}</td>
-                                <td>{{i.time}}</td>
+                                <td>{{i.time | number: '1.2'}}</td>
                                 <td>{{i.mode}}</td>
                             </tr>
                         </tbody>
