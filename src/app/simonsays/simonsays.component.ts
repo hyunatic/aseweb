@@ -54,7 +54,7 @@ export class SimonsaysComponent implements OnInit {
         display: true,
         scaleLabel: {
           display: true,
-          labelString: 'Timer'
+          labelString: 'Number of Tries'
         },
       }],
       yAxes: [
@@ -147,7 +147,7 @@ export class SimonsaysComponent implements OnInit {
       score.forEach(x => data.push(x));
     });
     this.simonSays
-      .forEach(x => this.lineChartLabels.push(x.time))
+      .forEach((x,index) => this.lineChartLabels.push(index + 1))
   }
 
   //Avg Score for age group (Scatter Plot)

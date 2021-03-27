@@ -1723,7 +1723,7 @@ var SimonsaysComponent = /** @class */ (function () {
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: 'Timer'
+                            labelString: 'Number of Tries'
                         },
                     }],
                 yAxes: [
@@ -1859,7 +1859,7 @@ var SimonsaysComponent = /** @class */ (function () {
             score.forEach(function (x) { return data.push(x); });
         });
         this.simonSays
-            .forEach(function (x) { return _this.lineChartLabels.push(x.time); });
+            .forEach(function (x, index) { return _this.lineChartLabels.push(index + 1); });
     };
     SimonsaysComponent.prototype.populateScatterPlot = function () {
         var _this = this;
