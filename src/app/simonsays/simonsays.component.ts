@@ -194,7 +194,7 @@ export class SimonsaysComponent implements OnInit {
     this.scatterChartData.forEach(x => {
       const data: any[] = x.data as any[];
       this.simonSays
-        .map(z => ({ x: parseInt(z.age), y: parseInt(z.score) })).forEach(a => data.push(a))
+        .map(z => ({ x: parseInt(z.age), y: parseFloat(z.score) })).forEach(a => data.push(a))
     })
   }
 }

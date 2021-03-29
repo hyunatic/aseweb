@@ -190,7 +190,7 @@ export class ColorgameComponent implements OnInit {
   populateScatterPlot() {
     this.scatterChartData.forEach(x => {
       const data: any[] = x.data as any[];
-      this.colourGame.map(z => ({ x: parseInt(z.age), y: parseInt(z.score) })).forEach(a => data.push(a))
+      this.colourGame.map(z => ({ x: parseInt(z.age), y: parseFloat(z.score) })).forEach(a => data.push(a))
     })
   }
 }

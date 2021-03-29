@@ -203,7 +203,7 @@ var NumbergameComponent = /** @class */ (function () {
         this.scatterChartData.forEach(function (x) {
             var data = x.data;
             _this.numberGame
-                .map(function (z) { return ({ x: parseInt(z.age), y: parseInt(z.score) }); }).forEach(function (a) { return data.push(a); });
+                .map(function (z) { return ({ x: parseInt(z.age), y: parseFloat(z.score) }); }).forEach(function (a) { return data.push(a); });
         });
     };
     NumbergameComponent.ctorParameters = function () { return [
@@ -1640,7 +1640,7 @@ var ColorgameComponent = /** @class */ (function () {
         var _this = this;
         this.scatterChartData.forEach(function (x) {
             var data = x.data;
-            _this.colourGame.map(function (z) { return ({ x: parseInt(z.age), y: parseInt(z.score) }); }).forEach(function (a) { return data.push(a); });
+            _this.colourGame.map(function (z) { return ({ x: parseInt(z.age), y: parseFloat(z.score) }); }).forEach(function (a) { return data.push(a); });
         });
     };
     ColorgameComponent.ctorParameters = function () { return [
@@ -1866,7 +1866,7 @@ var SimonsaysComponent = /** @class */ (function () {
         this.scatterChartData.forEach(function (x) {
             var data = x.data;
             _this.simonSays
-                .map(function (z) { return ({ x: parseInt(z.age), y: parseInt(z.score) }); }).forEach(function (a) { return data.push(a); });
+                .map(function (z) { return ({ x: parseInt(z.age), y: parseFloat(z.score) }); }).forEach(function (a) { return data.push(a); });
         });
     };
     SimonsaysComponent.ctorParameters = function () { return [
